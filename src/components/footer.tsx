@@ -84,7 +84,7 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {['Team', 'Competition', 'Our AUVs', 'Activities', 'Download TDR'].map((item) => (
+              {['Team', 'Competition', 'Our AUVs', 'Activities', 'Socials', 'Download TDR'].map((item) => (
                 <li key={item}>
                   <Link 
                     href={`/${item.toLowerCase().replace(' ', '-').replace('our-', '').replace('download-', '#')}`}

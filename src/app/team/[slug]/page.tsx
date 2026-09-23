@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getDivisionBySlug } from '@/lib/team-data';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
+import MemberAvatar from '@/components/member-avatar';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { ChevronLeft, Linkedin, Mail } from 'lucide-react';
@@ -60,17 +61,11 @@ export default async function DivisionDetailPage({ params }: DivisionDetailPageP
             {members.map((member) => (
               <Card key={member.name} className="text-center overflow-hidden transition-all duration-300 flex flex-col bg-black border border-[#00A68C] text-white shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-[#00A68C]/20">
                 <div className="aspect-square bg-muted bg-gray-800">
-                    <Image
-                        src={member.photoUrl}
-                        alt={`Photo of ${member.name}`}
- width={400}
-
-                        height={400}
-                        className="w-full h-full object-cover"
- style={{
- transform: `rotate(${member.rotation || 0}deg)`,
-                    }}
-                        data-ai-hint={member.hint}
+                    <MemberAvatar
+                        name={member.name}
+                        photoUrl={member.photoUrl}
+                        hint={member.hint}
+                        rotation={member.rotation}
                     />
                 </div>
                 <CardContent className="p-4 flex flex-col flex-grow">

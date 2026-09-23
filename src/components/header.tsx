@@ -44,13 +44,17 @@ const navLinks = [
     ],
   },
   {
-    label: 'Software',
+    label: 'Documentation',
     subLinks: [
-      { href: '/software', label: 'Overview' },
+      { href: '/documentation/software', label: 'Software' },
+      { href: '/documentation/electrical', label: 'Electrical' },
+      { href: '/documentation/mechanical', label: 'Mechanical' },
+      { href: '/documentation/management', label: 'Management' },
       { href: '/software/docs', label: 'Sphinx Docs' },
     ],
   },
   { href: '/activities', label: 'Activities' },
+  { href: '/socials', label: 'Socials' },
 ];
 
 const Header = () => {
